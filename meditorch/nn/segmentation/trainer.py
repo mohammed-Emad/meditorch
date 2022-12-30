@@ -7,7 +7,9 @@ from collections import defaultdict
 
 from .metrics import dice_loss, intersection_over_union
 from .utils.plot import metrics_line, normalise_mask
-
+import os
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 
 class Trainer(object):
 
